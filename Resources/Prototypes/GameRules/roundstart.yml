@@ -28,6 +28,8 @@
       prob: 0.25
     - id: SubWizard
       prob: 0.05
+    - id: HiddenVirome
+      prob: 0.05
 
 - type: entity
   parent: BaseGameRule
@@ -41,6 +43,8 @@
       prob: 0.4
     - id: Vampire
       prob: 0.25
+    - id: HiddenVirome
+      prob: 0.05
 
 - type: entity
   parent: BaseGameRule

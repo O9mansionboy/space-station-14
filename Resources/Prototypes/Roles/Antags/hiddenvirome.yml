@@ -1,0 +1,11 @@
+- type: antag
+  id: HiddenVirome
+  name: roles-antag-hiddenvirome-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-hiddenvirome-description
+  guides: [ Hidden Viromes ]
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 10800 # 3 hours
+

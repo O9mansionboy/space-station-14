@@ -42,6 +42,9 @@ public sealed partial class AdminVerbSystem
     [ValidatePrototypeId<StartingGearPrototype>]
     private const string PirateGearId = "PirateGear";
 
+    [ValidatePrototypeId<EntityPrototype>]
+    private const string DefaultHiddenViromeRule = "HiddenVirome";
+
     private readonly EntProtoId _paradoxCloneRuleId = "ParadoxCloneSpawn";
 
     // All antag verbs have names so invokeverb works.
@@ -71,7 +74,7 @@ public sealed partial class AdminVerbSystem
                 _antag.ForceMakeAntag<TraitorRuleComponent>(targetPlayer, DefaultTraitorRule);
             },
             Impact = LogImpact.High,
-            Message = string.Join(": ", traitorName,  Loc.GetString("admin-verb-make-traitor")),
+            Message = string.Join(": ", traitorName, Loc.GetString("admin-verb-make-traitor")),
         };
         args.Verbs.Add(traitor);
 
@@ -189,7 +192,7 @@ public sealed partial class AdminVerbSystem
 
         if (HasComp<HumanoidAppearanceComponent>(args.Target)) // only humanoids can be cloned
             args.Verbs.Add(paradox);
-            
+
         Verb ling = new()
         {
             Text = Loc.GetString("admin-verb-text-make-changeling"),
@@ -203,7 +206,7 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-verb-make-changeling"),
         };
         args.Verbs.Add(ling);
-        
+
         Verb vampire = new()
         {
             Text = Loc.GetString("admin-verb-text-make-vampire"),
@@ -217,5 +220,22 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-verb-make-vampire"),
         };
         args.Verbs.Add(vampire);
+        
+        var hiddenViromeName = Loc.GetString("admin-verb-text-make-hidden-virome");
+
+        // Hidden Virome verb
+        Verb hiddenVirome = new()
+        {
+            Text = hiddenViromeName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Misc/job_icons.rsi"), "HiddenVirome"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<HiddenViromeRuleComponent>(targetPlayer, DefaultHiddenViromeRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", hiddenViromeName, Loc.GetString("admin-verb-make-hidden-virome")),
+        };
+        args.Verbs.Add(hiddenVirome);
     }
 }

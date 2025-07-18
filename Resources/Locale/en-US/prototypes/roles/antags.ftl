@@ -50,3 +50,6 @@ roles-antag-dragon-objective = Create a carp army to take over this quadrant.
 
 roles-antag-changeling-name = Changeling
 roles-antag-changeling-description = Use your shapeshifting abilities to complete your objectives.
+
+roles-antag-hiddenvirome-name = Hidden Virome
+roles-antag-hiddenvirome-description = Spread the Virome, Make sure it stays undetected! Lie, Infect or Kill your way to victory!

@@ -51,6 +51,23 @@
 
 - type: entity
   parent: BaseGameRule
+  id: HiddenVirome
+  components:
+  - type: HiddenViromeRule
+  - type: AntagSelection
+    agentName: hidden-virome-roundend-name
+    definitions:
+    - prefRoles: [ HiddenVirome ]
+      max: 3
+      playerRatio: 10
+      lateJoinAdditional: true
+      allowNonHumans: false
+      multiAntagSetting: None
+      mindRoles:
+      - MindRoleHiddenVirome
+
+- type: entity
+  parent: BaseGameRule
   id: Vampire
   components:
   - type: VampireRule
