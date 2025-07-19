@@ -5,7 +5,7 @@ using Content.Shared.NPC.Systems;
 
 namespace Content.Server.GameTicking.Rules.Components;
 
-[RegisterComponent]
+[RegisterComponent, Access(typeof(HiddenViromeRuleSystem))]
 public sealed partial class HiddenViromeRuleComponent : Component
 {
     public readonly List<EntityUid> HiddenViromeMinds = new();
