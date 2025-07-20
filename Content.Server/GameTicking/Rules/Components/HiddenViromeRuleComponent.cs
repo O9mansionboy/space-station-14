@@ -13,7 +13,7 @@ public sealed partial class HiddenViromeRuleComponent : Component
 
     public readonly List<ProtoId<EntityPrototype>> Roles = new()
     {
-        "HiddenViromeRoleComponent"
+        "HiddenViromeConditionComponent",
     };
 
     public readonly List<ProtoId<EntityPrototype>> Objectives = new()
